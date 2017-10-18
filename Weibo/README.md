@@ -1,2 +1,0 @@
-# Weibo
-Weibo swift
