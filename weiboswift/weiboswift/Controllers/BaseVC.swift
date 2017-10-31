@@ -16,8 +16,8 @@ class BaseVC: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        visitorView.registerBtn.addTarget(self, action: #selector(registerBtnClicked), for: .touchUpInside)
+        visitorView.loginBtn.addTarget(self, action: #selector(loginBtnClicked), for: .touchUpInside)
         // Do any additional setup after loading the view.
     }
 
@@ -25,7 +25,16 @@ class BaseVC: UITableViewController {
 }
 
 extension BaseVC {
-    private func setupVistorView() {
+    @objc private func setupVistorView() {
         view = visitorView
+    }
+}
+
+extension BaseVC {
+    @objc private func registerBtnClicked() {
+        print("registerBtnClicked")
+    }
+    @objc private func loginBtnClicked() {
+        
     }
 }

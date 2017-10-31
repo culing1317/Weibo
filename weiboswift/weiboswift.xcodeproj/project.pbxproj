@@ -23,6 +23,8 @@
 		AA1679C01F975A1A00283609 /* Messge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1679BF1F975A1A00283609 /* Messge.storyboard */; };
 		AA1679C21F975A4700283609 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1679C11F975A4700283609 /* Discover.storyboard */; };
 		AA1679C41F975A7900283609 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1679C31F975A7900283609 /* Profile.storyboard */; };
+		AA1F7CF81F99D8690009B671 /* OAuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F7CF71F99D8690009B671 /* OAuthVC.swift */; };
+		AA88E7431F9DE64C002553E7 /* TableValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88E7421F9DE64C002553E7 /* TableValidationTests.swift */; };
 		AAE73C8A1F9457520003E038 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE73C891F9457520003E038 /* AppDelegate.swift */; };
 		AAE73C8F1F9457520003E038 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE73C8D1F9457520003E038 /* Main.storyboard */; };
 		AAE73C911F9457520003E038 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE73C901F9457520003E038 /* Assets.xcassets */; };
@@ -66,6 +68,8 @@
 		AA1679BF1F975A1A00283609 /* Messge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Messge.storyboard; sourceTree = "<group>"; };
 		AA1679C11F975A4700283609 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		AA1679C31F975A7900283609 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		AA1F7CF71F99D8690009B671 /* OAuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthVC.swift; sourceTree = "<group>"; };
+		AA88E7421F9DE64C002553E7 /* TableValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableValidationTests.swift; sourceTree = "<group>"; };
 		AAE73C861F9457520003E038 /* weiboswift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weiboswift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE73C891F9457520003E038 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAE73C8E1F9457520003E038 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 				AA1077941F98394C009F1129 /* MessageVC.swift */,
 				AA0F79BE1F9847E500DCEF4F /* ComposeVC.swift */,
 				AA0F79C91F98561D00DCEF4F /* BaseVC.swift */,
+				AA1F7CF71F99D8690009B671 /* OAuthVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 			children = (
 				AAE73C9E1F9457520003E038 /* weiboswiftTests.swift */,
 				AAE73CA01F9457520003E038 /* Info.plist */,
+				AA88E7421F9DE64C002553E7 /* TableValidationTests.swift */,
 			);
 			path = weiboswiftTests;
 			sourceTree = "<group>";
@@ -433,6 +439,7 @@
 				AA1077931F98391F009F1129 /* ProfileVC.swift in Sources */,
 				AA0F79BF1F9847E500DCEF4F /* ComposeVC.swift in Sources */,
 				AA0F79C21F9855BB00DCEF4F /* VistorView.swift in Sources */,
+				AA1F7CF81F99D8690009B671 /* OAuthVC.swift in Sources */,
 				AA0F79BD1F983DED00DCEF4F /* UIButton-Extension.swift in Sources */,
 				AA1077911F9838ED009F1129 /* DiscoverVC.swift in Sources */,
 				AA10778F1F983817009F1129 /* HomeVC.swift in Sources */,
@@ -448,6 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAE73C9F1F9457520003E038 /* weiboswiftTests.swift in Sources */,
+				AA88E7431F9DE64C002553E7 /* TableValidationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
