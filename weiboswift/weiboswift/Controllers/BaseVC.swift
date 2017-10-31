@@ -17,6 +17,7 @@ class BaseVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let a = "test"
+        let b = "test1"
         
         
         // Do any additional setup after loading the view.
