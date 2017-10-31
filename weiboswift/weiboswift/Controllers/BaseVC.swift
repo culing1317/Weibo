@@ -18,16 +18,10 @@ class BaseVC: UITableViewController {
         super.viewDidLoad()
 
         let a = "test"
-<<<<<<< HEAD
         let b = "test1"
 
         visitorView.registerBtn.addTarget(self, action: #selector(registerBtnClicked), for: .touchUpInside)
         visitorView.loginBtn.addTarget(self, action: #selector(loginBtnClicked), for: .touchUpInside)
-
-=======
-        visitorView.registerBtn.addTarget(self, action: #selector(registerBtnClicked), for: .touchUpInside)
-        visitorView.loginBtn.addTarget(self, action: #selector(loginBtnClicked), for: .touchUpInside)
->>>>>>> d70bccb7672be745c74ca09672e54ba63098dda8
         // Do any additional setup after loading the view.
     }
 
