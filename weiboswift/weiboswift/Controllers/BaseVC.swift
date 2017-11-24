@@ -10,27 +10,22 @@ import UIKit
 
 class BaseVC: UITableViewController {
     lazy var visitorView = VistorView.visitorView()
+    let isLogin = false
+    
+    
     override func loadView() {
-       let islogin = false
-        islogin ? super.loadView() : setupVistorView()
+        isLogin ? super.loadView() : setupVistorView()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-<<<<<<< HEAD
-        
-        
-=======
-
-        let a = "test"
-        let b = "test1"
-
         visitorView.registerBtn.addTarget(self, action: #selector(registerBtnClicked), for: .touchUpInside)
         visitorView.loginBtn.addTarget(self, action: #selector(loginBtnClicked), for: .touchUpInside)
->>>>>>> 1c2b3c52d8580fed551035c396248874f7def1a5
-        // Do any additional setup after loading the view.
+
     }
 
-
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+    }
 }
 
 extension BaseVC {
