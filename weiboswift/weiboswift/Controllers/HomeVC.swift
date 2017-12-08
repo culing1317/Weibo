@@ -24,6 +24,8 @@ class HomeVC: BaseVC {
         }
         //2.设置导航栏的内容
         setupNavigationBar()
+        
+        
     }
 
 }

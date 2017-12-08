@@ -14,30 +14,27 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - HYLabel (1.0.2)
+  - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
   - SDWebImage/Core (3.7.6)
-  - SnapKit (3.2.0)
   - SVProgressHUD (2.0.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
-  - HYLabel
+  - MJExtension
   - MJRefresh
   - SDWebImage (~> 3.7.5)
-  - SnapKit
   - SVProgressHUD (~> 2.0.2)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  HYLabel: a1294c88a57fa0c71651e167a6cf2ffcf1de9c28
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
-  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SVProgressHUD: bfde85ed6c573ea802b9cb37894ed9b629034f1b
 
-PODFILE CHECKSUM: d811c9164aad483de0007cd7ea44c9432cc2a431
+PODFILE CHECKSUM: 95249062733059acc17200c22b0618294d74ac3f
 
 COCOAPODS: 1.1.1

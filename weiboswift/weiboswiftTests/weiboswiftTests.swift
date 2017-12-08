@@ -22,6 +22,7 @@ class weiboswiftTests: XCTestCase {
     }
     
     func testExample() {
+        testAccountSetKeyValues()
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
@@ -31,6 +32,13 @@ class weiboswiftTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    func testAccountSetKeyValues() {
+        // ["access_token":"233", "expires_in": 1, "remind_in": 1, "isRealName": true, "uid": 45]
+        let dict = ["access_token":"233","expires_in": 1] as [String : Any]
+        var account = Account.init(dict: dict)
+        print(account.description)
     }
     
 }

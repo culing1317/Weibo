@@ -9,18 +9,46 @@
 import UIKit
 
 class BaseVC: UITableViewController {
+    
+    /// 未登陆／访客 视图
     lazy var visitorView = VistorView.visitorView()
-    let isLogin = false
+    
+    /// 是否登陆
+    var isLogin: Bool {
+        
+        get {
+            let account = DiskTool.getAccount()
+//            guard (account != nil) else {
+                return false
+//            }
+//            return true
+        }
+        
+    }
+    
     
     
     override func loadView() {
+        
         isLogin ? super.loadView() : setupVistorView()
+        
     }
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         visitorView.registerBtn.addTarget(self, action: #selector(registerBtnClicked), for: .touchUpInside)
         visitorView.loginBtn.addTarget(self, action: #selector(loginBtnClicked), for: .touchUpInside)
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        if self.isLogin {
+            
+        }
+        
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -39,6 +67,9 @@ extension BaseVC {
         print("registerBtnClicked")
     }
     @objc private func loginBtnClicked() {
+        
+        let oauthVC = OAuthVC()
+        self .present(UINavigationController(rootViewController: oauthVC), animated: true, completion: nil)
         
     }
 }

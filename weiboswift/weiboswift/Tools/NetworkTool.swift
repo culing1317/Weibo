@@ -23,6 +23,7 @@ class NetworkTool: AFHTTPSessionManager {
     static let shareInstance : NetworkTool = { () -> NetworkTool in
         let tool = NetworkTool()
         tool.responseSerializer.acceptableContentTypes?.insert("text/html")
+        tool.responseSerializer.acceptableContentTypes?.insert("text/plain")
         return tool
     }()
     
@@ -30,24 +31,30 @@ class NetworkTool: AFHTTPSessionManager {
 
 extension NetworkTool {
     
-    func request(methodType : RequestType, urlStr : String, parameters : [String : AnyObject],
-                 finished : @escaping (_ result : AnyObject?, _ error : Error?) -> ()) {
-        
-        let successCallBack = { (task : URLSessionDataTask, result : AnyObject?) -> Void in
+    
+    func request(methodType : RequestType, urlStr : String, parameters : Any?,
+                 finished : @escaping (_ result : Any?, _ error : Error?) -> ()) {
+        let successCallBack = { (task : URLSessionDataTask, result : Any?) -> Void in
             finished(result, nil)
-        } as? (URLSessionDataTask, Any?) -> Void
+            }
         
-        let failureCallBack = { (task : URLSessionDataTask, error : NSError) -> Void in
-            finished(task, error)
-        } as? (URLSessionDataTask?, Error) -> Void
+        let failureCallBack = { (task : URLSessionDataTask?, error : Error) -> Void in
+            finished(nil, error)
+        }
         
         
         if methodType == .GET {
-            
             get(urlStr, parameters: parameters, progress: nil, success: successCallBack, failure: failureCallBack)
             
         } else {
-            
+//
+//            post(urlStr, parameters: parameters, progress: nil, success: { (task : URLSessionDataTask?, result : Any?) in
+//
+//                print(result!)
+//
+//            } , failure: { (task : URLSessionDataTask?, error : NSError) in
+//                    print(error)
+//                    } as? (URLSessionDataTask?, Error) -> Void)
             post(urlStr, parameters: parameters, progress: nil, success: successCallBack, failure: failureCallBack)
             
         }

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0C97DEE6304608BCFF6A16F1 /* Pods_weiboswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3193BDD4B2A8C7E9CF5DB9D3 /* Pods_weiboswift.framework */; };
+		AA0496341FC8006E00BD4973 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0496331FC8006E00BD4973 /* Common.swift */; };
+		AA0496371FC8029600BD4973 /* OAuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0496351FC8029600BD4973 /* OAuthVC.swift */; };
+		AA0496381FC8029600BD4973 /* OAuthVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA0496361FC8029600BD4973 /* OAuthVC.xib */; };
+		AA0D80AA1FDA5C1400BD65F6 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7E6C811FCBC150009C1153 /* Account.swift */; };
 		AA0F79B91F983BEF00DCEF4F /* Compose.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA0F79B81F983BEF00DCEF4F /* Compose.storyboard */; };
 		AA0F79BD1F983DED00DCEF4F /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F79BC1F983DED00DCEF4F /* UIButton-Extension.swift */; };
 		AA0F79BF1F9847E500DCEF4F /* ComposeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F79BE1F9847E500DCEF4F /* ComposeVC.swift */; };
@@ -26,10 +30,11 @@
 		AA1679C01F975A1A00283609 /* Messge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1679BF1F975A1A00283609 /* Messge.storyboard */; };
 		AA1679C21F975A4700283609 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1679C11F975A4700283609 /* Discover.storyboard */; };
 		AA1679C41F975A7900283609 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1679C31F975A7900283609 /* Profile.storyboard */; };
-		AA1F7CF81F99D8690009B671 /* OAuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F7CF71F99D8690009B671 /* OAuthVC.swift */; };
 		AA2BC6B11FAAF480005F5CBF /* TitleBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BC6B01FAAF480005F5CBF /* TitleBtn.swift */; };
 		AA2BC6B61FAAFD6B005F5CBF /* PopoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BC6B41FAAFD6B005F5CBF /* PopoverVC.swift */; };
 		AA2BC6B71FAAFD6B005F5CBF /* PopoverVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA2BC6B51FAAFD6B005F5CBF /* PopoverVC.xib */; };
+		AA7E6C821FCBC150009C1153 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7E6C811FCBC150009C1153 /* Account.swift */; };
+		AA7E6C851FCE5063009C1153 /* DiskTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7E6C841FCE5063009C1153 /* DiskTool.swift */; };
 		AA88E7431F9DE64C002553E7 /* TableValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88E7421F9DE64C002553E7 /* TableValidationTests.swift */; };
 		AAE73C8A1F9457520003E038 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE73C891F9457520003E038 /* AppDelegate.swift */; };
 		AAE73C8F1F9457520003E038 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE73C8D1F9457520003E038 /* Main.storyboard */; };
@@ -59,6 +64,9 @@
 /* Begin PBXFileReference section */
 		3193BDD4B2A8C7E9CF5DB9D3 /* Pods_weiboswift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weiboswift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84320535DBB82EEB02FFE96A /* Pods-weiboswift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weiboswift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weiboswift/Pods-weiboswift.debug.xcconfig"; sourceTree = "<group>"; };
+		AA0496331FC8006E00BD4973 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		AA0496351FC8029600BD4973 /* OAuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthVC.swift; sourceTree = "<group>"; };
+		AA0496361FC8029600BD4973 /* OAuthVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OAuthVC.xib; sourceTree = "<group>"; };
 		AA0F79B81F983BEF00DCEF4F /* Compose.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Compose.storyboard; sourceTree = "<group>"; };
 		AA0F79BC1F983DED00DCEF4F /* UIButton-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 		AA0F79BE1F9847E500DCEF4F /* ComposeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeVC.swift; sourceTree = "<group>"; };
@@ -77,10 +85,11 @@
 		AA1679BF1F975A1A00283609 /* Messge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Messge.storyboard; sourceTree = "<group>"; };
 		AA1679C11F975A4700283609 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		AA1679C31F975A7900283609 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		AA1F7CF71F99D8690009B671 /* OAuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthVC.swift; sourceTree = "<group>"; };
 		AA2BC6B01FAAF480005F5CBF /* TitleBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBtn.swift; sourceTree = "<group>"; };
 		AA2BC6B41FAAFD6B005F5CBF /* PopoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverVC.swift; sourceTree = "<group>"; };
 		AA2BC6B51FAAFD6B005F5CBF /* PopoverVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopoverVC.xib; sourceTree = "<group>"; };
+		AA7E6C811FCBC150009C1153 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		AA7E6C841FCE5063009C1153 /* DiskTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskTool.swift; sourceTree = "<group>"; };
 		AA88E7421F9DE64C002553E7 /* TableValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableValidationTests.swift; sourceTree = "<group>"; };
 		AAE73C861F9457520003E038 /* weiboswift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weiboswift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE73C891F9457520003E038 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -159,11 +168,12 @@
 				AA1077941F98394C009F1129 /* MessageVC.swift */,
 				AA0F79BE1F9847E500DCEF4F /* ComposeVC.swift */,
 				AA0F79C91F98561D00DCEF4F /* BaseVC.swift */,
-				AA1F7CF71F99D8690009B671 /* OAuthVC.swift */,
 				AA2BC6B41FAAFD6B005F5CBF /* PopoverVC.swift */,
 				AA2BC6B51FAAFD6B005F5CBF /* PopoverVC.xib */,
 				AA0FA96A1FABF93D0088D09D /* PresentationC.swift */,
 				AA12144B1FC65ED30054BAE0 /* PopoverAnimator.swift */,
+				AA0496351FC8029600BD4973 /* OAuthVC.swift */,
+				AA0496361FC8029600BD4973 /* OAuthVC.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -171,6 +181,7 @@
 		AA1077891F983733009F1129 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AA7E6C811FCBC150009C1153 /* Account.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -178,6 +189,7 @@
 		AA10778A1F983734009F1129 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				AA0496331FC8006E00BD4973 /* Common.swift */,
 			);
 			path = Vender;
 			sourceTree = "<group>";
@@ -201,6 +213,7 @@
 			children = (
 				AA2BC6B01FAAF480005F5CBF /* TitleBtn.swift */,
 				AA12144D1FC67AEC0054BAE0 /* NetworkTool.swift */,
+				AA7E6C841FCE5063009C1153 /* DiskTool.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -390,6 +403,7 @@
 				AA1679BE1F9759F500283609 /* Home.storyboard in Resources */,
 				AA1679C41F975A7900283609 /* Profile.storyboard in Resources */,
 				AA1679C21F975A4700283609 /* Discover.storyboard in Resources */,
+				AA0496381FC8029600BD4973 /* OAuthVC.xib in Resources */,
 				AA0F79B91F983BEF00DCEF4F /* Compose.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,16 +477,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA0496341FC8006E00BD4973 /* Common.swift in Sources */,
 				AA1077931F98391F009F1129 /* ProfileVC.swift in Sources */,
 				AA0F79BF1F9847E500DCEF4F /* ComposeVC.swift in Sources */,
 				AA0F79C21F9855BB00DCEF4F /* VistorView.swift in Sources */,
 				AA2BC6B11FAAF480005F5CBF /* TitleBtn.swift in Sources */,
 				AA12144E1FC67AEC0054BAE0 /* NetworkTool.swift in Sources */,
 				AA2BC6B61FAAFD6B005F5CBF /* PopoverVC.swift in Sources */,
-				AA1F7CF81F99D8690009B671 /* OAuthVC.swift in Sources */,
 				AA0F79BD1F983DED00DCEF4F /* UIButton-Extension.swift in Sources */,
 				AA0FA96B1FABF93D0088D09D /* PresentationC.swift in Sources */,
 				AA1077911F9838ED009F1129 /* DiscoverVC.swift in Sources */,
+				AA0496371FC8029600BD4973 /* OAuthVC.swift in Sources */,
+				AA7E6C851FCE5063009C1153 /* DiskTool.swift in Sources */,
+				AA7E6C821FCBC150009C1153 /* Account.swift in Sources */,
 				AA10778F1F983817009F1129 /* HomeVC.swift in Sources */,
 				AA12144C1FC65ED30054BAE0 /* PopoverAnimator.swift in Sources */,
 				AA1077951F98394C009F1129 /* MessageVC.swift in Sources */,
@@ -488,6 +505,7 @@
 			files = (
 				AAE73C9F1F9457520003E038 /* weiboswiftTests.swift in Sources */,
 				AA88E7431F9DE64C002553E7 /* TableValidationTests.swift in Sources */,
+				AA0D80AA1FDA5C1400BD65F6 /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,6 +667,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KHS5TB9M7R;
 				INFOPLIST_FILE = weiboswift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = touchair.weiboswift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -665,6 +684,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KHS5TB9M7R;
 				INFOPLIST_FILE = weiboswift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = touchair.weiboswift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
