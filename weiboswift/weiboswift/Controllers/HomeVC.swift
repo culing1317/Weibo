@@ -19,12 +19,12 @@ class HomeVC: BaseVC {
         super.viewDidLoad()
         //1.没有登陆时设置的内容
         visitorView.addRotationAnimate()
-        if !isLogin {
+        if !DiskTool.isLogin {
             return
         }
         //2.设置导航栏的内容
         setupNavigationBar()
-        
+        titleBtn.setTitle(DiskTool.getAccount()?.name, for: .normal)
         
     }
 

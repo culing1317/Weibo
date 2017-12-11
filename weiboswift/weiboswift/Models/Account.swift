@@ -11,15 +11,14 @@ import UIKit
 /// setValuesForKeys,需声明@objcMembers
 
 /// u_long、bool类型，在setValuesForKeys都会报错
+
 @objcMembers
 class Account: NSObject,NSCoding {
     var access_token: String?
     
     /// 过期时间
-    var expires_in: NSNumber?
-    var isRealName: NSNumber?
-    var uid: NSNumber?
-    var expires_date: NSDate?
+    var expires_in: TimeInterval?
+    var uid: String?
     
     var profile_image_url: String?
     var avatar_large: String?
@@ -27,7 +26,13 @@ class Account: NSObject,NSCoding {
     
     init(dict: Dictionary<String, Any>) {
         super.init()
-        self.setValuesForKeys(dict)
+        self.access_token = dict["access_token"] as? String
+        self.expires_in = dict["expires_in"] as? TimeInterval
+        self.uid = dict["uid"] as? String
+        self.profile_image_url = dict["profile_image_url"] as? String
+        self.avatar_large = dict["avatar_large"] as? String
+        self.name = dict["name"] as? String
+//        self.setValuesForKeys(dict)
        
     }
     
@@ -37,24 +42,22 @@ class Account: NSObject,NSCoding {
     
     required init?(coder aDecoder: NSCoder) {
         super.init()
-        aDecoder.decodeObject(forKey: "access_token")
-        aDecoder.decodeDouble(forKey: "expires_in")
-        aDecoder.decodeDouble(forKey: "isRealName")
-        aDecoder.decodeDouble(forKey: "uid")
-        aDecoder.decodeDouble(forKey: "profile_image_url")
-        aDecoder.decodeDouble(forKey: "avatar_large")
-        aDecoder.decodeDouble(forKey: "name")
+        self.access_token = aDecoder.decodeObject(forKey: "access_token") as? String
+        self.expires_in = aDecoder.decodeObject(forKey: "expires_in") as? TimeInterval
+        self.uid = aDecoder.decodeObject(forKey: "uid") as? String
+        self.profile_image_url = aDecoder.decodeObject(forKey: "profile_image_url") as? String
+        self.avatar_large = aDecoder.decodeObject(forKey: "avatar_large") as? String
+        self.name = aDecoder.decodeObject(forKey: "name") as? String
         
     }
     
     func encode(with aCoder: NSCoder) {
-        aCoder.encode("access_token")
-        aCoder.encode("expires_in")
-        aCoder.encode("isRealName")
-        aCoder.encode("uid")
-        aCoder.encode("profile_image_url")
-        aCoder.encode("avatar_large")
-        aCoder.encode("name")
+        aCoder.encode(access_token, forKey: "access_token")
+        aCoder.encode(expires_in, forKey: "expires_in")
+        aCoder.encode(uid, forKey: "uid")
+        aCoder.encode(profile_image_url, forKey: "profile_image_url")
+        aCoder.encode(avatar_large, forKey: "avatar_large")
+        aCoder.encode(name, forKey: "name")
     }
 
 }

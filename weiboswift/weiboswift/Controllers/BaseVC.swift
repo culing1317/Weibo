@@ -12,25 +12,11 @@ class BaseVC: UITableViewController {
     
     /// 未登陆／访客 视图
     lazy var visitorView = VistorView.visitorView()
-    
-    /// 是否登陆
-    var isLogin: Bool {
-        
-        get {
-            let account = DiskTool.getAccount()
-//            guard (account != nil) else {
-                return false
-//            }
-//            return true
-        }
-        
-    }
-    
-    
+ 
     
     override func loadView() {
         
-        isLogin ? super.loadView() : setupVistorView()
+        DiskTool.isLogin ? super.loadView() : setupVistorView()
         
     }
     
@@ -45,9 +31,7 @@ class BaseVC: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
-        if self.isLogin {
-            
-        }
+
         
     }
 

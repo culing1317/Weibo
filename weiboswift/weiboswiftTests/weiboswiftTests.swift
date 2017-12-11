@@ -35,8 +35,8 @@ class weiboswiftTests: XCTestCase {
     }
     
     func testAccountSetKeyValues() {
-        // ["access_token":"233", "expires_in": 1, "remind_in": 1, "isRealName": true, "uid": 45]
-        let dict = ["access_token":"233","expires_in": 1] as [String : Any]
+        let dict = ["access_token":"233", "expires_in": 1, "remind_in": 1, "isRealName": true, "uid": 45] as [String : Any]
+//        let dict = ["access_token":"233","expires_in": 1] as [String : Any]
         var account = Account.init(dict: dict)
         print(account.description)
     }

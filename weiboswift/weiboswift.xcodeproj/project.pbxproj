@@ -30,6 +30,10 @@
 		AA1679C01F975A1A00283609 /* Messge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1679BF1F975A1A00283609 /* Messge.storyboard */; };
 		AA1679C21F975A4700283609 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1679C11F975A4700283609 /* Discover.storyboard */; };
 		AA1679C41F975A7900283609 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1679C31F975A7900283609 /* Profile.storyboard */; };
+		AA2717CD1FDE7FEC00794C8E /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2717CB1FDE7FEC00794C8E /* WelcomeVC.swift */; };
+		AA2717D01FDE7FEC00794C8E /* WelcomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA2717CC1FDE7FEC00794C8E /* WelcomeVC.xib */; };
+		AA2717D11FDE7FEC00794C8E /* WelcomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA2717CC1FDE7FEC00794C8E /* WelcomeVC.xib */; };
+		AA2717D21FDE7FEC00794C8E /* WelcomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA2717CC1FDE7FEC00794C8E /* WelcomeVC.xib */; };
 		AA2BC6B11FAAF480005F5CBF /* TitleBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BC6B01FAAF480005F5CBF /* TitleBtn.swift */; };
 		AA2BC6B61FAAFD6B005F5CBF /* PopoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BC6B41FAAFD6B005F5CBF /* PopoverVC.swift */; };
 		AA2BC6B71FAAFD6B005F5CBF /* PopoverVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA2BC6B51FAAFD6B005F5CBF /* PopoverVC.xib */; };
@@ -85,6 +89,8 @@
 		AA1679BF1F975A1A00283609 /* Messge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Messge.storyboard; sourceTree = "<group>"; };
 		AA1679C11F975A4700283609 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		AA1679C31F975A7900283609 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		AA2717CB1FDE7FEC00794C8E /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		AA2717CC1FDE7FEC00794C8E /* WelcomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeVC.xib; sourceTree = "<group>"; };
 		AA2BC6B01FAAF480005F5CBF /* TitleBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBtn.swift; sourceTree = "<group>"; };
 		AA2BC6B41FAAFD6B005F5CBF /* PopoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverVC.swift; sourceTree = "<group>"; };
 		AA2BC6B51FAAFD6B005F5CBF /* PopoverVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopoverVC.xib; sourceTree = "<group>"; };
@@ -174,6 +180,8 @@
 				AA12144B1FC65ED30054BAE0 /* PopoverAnimator.swift */,
 				AA0496351FC8029600BD4973 /* OAuthVC.swift */,
 				AA0496361FC8029600BD4973 /* OAuthVC.xib */,
+				AA2717CB1FDE7FEC00794C8E /* WelcomeVC.swift */,
+				AA2717CC1FDE7FEC00794C8E /* WelcomeVC.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -401,6 +409,7 @@
 				AAE73C8F1F9457520003E038 /* Main.storyboard in Resources */,
 				AA0F79C41F9855CA00DCEF4F /* VistorView.xib in Resources */,
 				AA1679BE1F9759F500283609 /* Home.storyboard in Resources */,
+				AA2717D01FDE7FEC00794C8E /* WelcomeVC.xib in Resources */,
 				AA1679C41F975A7900283609 /* Profile.storyboard in Resources */,
 				AA1679C21F975A4700283609 /* Discover.storyboard in Resources */,
 				AA0496381FC8029600BD4973 /* OAuthVC.xib in Resources */,
@@ -412,6 +421,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA2717D11FDE7FEC00794C8E /* WelcomeVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +429,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA2717D21FDE7FEC00794C8E /* WelcomeVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +499,7 @@
 				AA0FA96B1FABF93D0088D09D /* PresentationC.swift in Sources */,
 				AA1077911F9838ED009F1129 /* DiscoverVC.swift in Sources */,
 				AA0496371FC8029600BD4973 /* OAuthVC.swift in Sources */,
+				AA2717CD1FDE7FEC00794C8E /* WelcomeVC.swift in Sources */,
 				AA7E6C851FCE5063009C1153 /* DiskTool.swift in Sources */,
 				AA7E6C821FCBC150009C1153 /* Account.swift in Sources */,
 				AA10778F1F983817009F1129 /* HomeVC.swift in Sources */,

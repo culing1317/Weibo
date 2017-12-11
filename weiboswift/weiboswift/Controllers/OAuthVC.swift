@@ -124,12 +124,12 @@ extension OAuthVC: WKNavigationDelegate {
         guard (account.uid != nil) else {
             return;
         }
-        let parameters = ["access_token":account.access_token, "uid": account.uid] as [String : Any]
+        let parameters = ["access_token":account.access_token ?? "", "uid": account.uid ?? ""] as [String : Any]
         NetworkTool.shareInstance.request(methodType: .GET, urlStr: userShow_url, parameters: parameters) { (result: Any?, error: Error?) in
             
             guard (error == nil) else {
                 print(error!);
-                return;
+                return; 
             }
             
             guard let dic = result as? Dictionary<String, Any> else {
@@ -141,6 +141,9 @@ extension OAuthVC: WKNavigationDelegate {
             account.profile_image_url = dic["profile_image_url"] as? String
             account.avatar_large = dic["avatar_large"] as? String
             DiskTool.saveAccount(account: account)
+            self.dismiss(animated: false, completion: {
+                UIApplication.shared.keyWindow?.rootViewController = WelcomeVC()
+            })
             self.close()
         }
     }

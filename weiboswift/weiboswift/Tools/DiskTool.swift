@@ -11,7 +11,18 @@ import UIKit
 class DiskTool: NSObject {
     
     /// 用户信息沙盒路径
-    static let path =  NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/account.data"
+    static let path =  NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/account.plist"
+    static var isLogin: Bool {
+        
+        get {
+            let account = self.getAccount()
+            guard (account != nil) else {
+                return false
+            }
+            return true
+        }
+        
+    }
     
     
 }
@@ -33,8 +44,16 @@ extension DiskTool {
     ///
     ///
     static func getAccount() -> Account? {
+        let data = NSKeyedUnarchiver.unarchiveObject(withFile: path)
         
-        let account: Account? = NSKeyedUnarchiver.unarchiveObject(withFile: path) as! Account?
+        let account: Account? = NSKeyedUnarchiver.unarchiveObject(withFile: path) as? Account
+        guard account != nil && account?.uid != nil else {
+            return nil
+        }
+        //account不为空
+        if let expiresDate: Date = Date.init(timeIntervalSinceNow: (account?.expires_in as? TimeInterval)!) {
+            return (expiresDate.compare(Date()) == .orderedDescending ? account : nil)
+        }
         return account
         
     }
