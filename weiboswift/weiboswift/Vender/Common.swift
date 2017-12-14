@@ -16,4 +16,4 @@ let oAuth_url = "https://api.weibo.com/oauth2/authorize?client_id=" + app_key + 
 
 let userShow_url = "https://api.weibo.com/2/users/show.json"
 
-
+let homeStatuses_url = "https://api.weibo.com/2/statuses/home_timeline.json"

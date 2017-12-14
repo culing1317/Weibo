@@ -7,9 +7,10 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 class HomeVC: BaseVC {
     let titleBtn = TitleBtn()
+    lazy var statuseArr = Array<Status>()
     private lazy var popoverAnimator = PopoverAnimator { (prsented) in
         self.titleBtn.isSelected = prsented
     }
@@ -17,6 +18,7 @@ class HomeVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.estimatedRowHeight = 200
         //1.没有登陆时设置的内容
         visitorView.addRotationAnimate()
         if !DiskTool.isLogin {
@@ -25,7 +27,7 @@ class HomeVC: BaseVC {
         //2.设置导航栏的内容
         setupNavigationBar()
         titleBtn.setTitle(DiskTool.getAccount()?.name, for: .normal)
-        
+        requestData()
     }
 
 }
@@ -57,7 +59,10 @@ extension HomeVC {
         if btn.isSelected {
             popVC.modalPresentationStyle = .custom
             popVC.transitioningDelegate = popoverAnimator
-            popoverAnimator.presentFrame = CGRect(x: view.frame.midX - view.frame.width * 0.25, y: (navigationController?.navigationBar.frame.maxY)!, width: view.frame.width * 0.5, height: view.frame.size.height*0.4)
+            popoverAnimator.presentFrame = CGRect(x: view.frame.midX - view.frame.width * 0.25,
+                                                  y: (navigationController?.navigationBar.frame.maxY)!,
+                                                  width: view.frame.width * 0.5,
+                                                  height: view.frame.size.height*0.4)
             
             present(popVC, animated: true, completion: nil)
         }else{
@@ -65,6 +70,44 @@ extension HomeVC {
         }
 
         
+    }
+}
+
+extension HomeVC {
+    func requestData() {
+        let access_token = DiskTool.getAccount()?.access_token!
+        let parameters = ["access_token": access_token, "count": 8] as [String : Any?]
+        NetworkTool.shareInstance.request(methodType: .GET, urlStr: homeStatuses_url, parameters: parameters) { (result: Any?, error: Error?) in
+            if (error != nil) {
+               SVProgressHUD.show(withStatus: error?.localizedDescription)
+                return;
+            }
+            guard let statuses: [String : Any] = result as? [String : AnyObject] else {
+                return
+            }
+            let array: Array<[String: AnyObject]> = statuses["statuses"] as! Array<Dictionary>
+            for dict: [String: AnyObject] in array {
+                let status = Status(dict: dict)
+                self.statuseArr.append(status)
+            }
+            self.tableView.reloadData()
+            print(self.statuseArr)
+        }
+    }
+}
+
+extension HomeVC {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return statuseArr.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: StatusCell = tableView.dequeueReusableCell(withIdentifier: "status_cell") as! StatusCell
+        cell.status = statuseArr[indexPath.row]
+        return cell
+    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
 }
 

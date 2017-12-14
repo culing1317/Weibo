@@ -34,6 +34,7 @@ extension MainVC {
         composeBtn.center = CGPoint(x: tabBar.center.x, y: tabBar.bounds.size.height * 0.5)
         composeBtn.addTarget(self, action: #selector(MainVC.ComposeBtnClicked), for: .touchUpInside)
     }
+    
 }
 
 // MARK: - click methods
