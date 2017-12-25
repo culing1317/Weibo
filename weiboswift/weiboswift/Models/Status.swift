@@ -24,7 +24,7 @@ class Status: NSObject {
     var reposts_count: Int = 0
     var comments_count: Int = 0
     var attitudes_count: Int = 0
-    var user: User?
+    var user: User!
     var retweeted_status: Status?
     var pic_urlsArr = Array<String>()
     
@@ -40,6 +40,9 @@ class Status: NSObject {
         attitudes_count = dict["attitudes_count"] as! Int
         if let userDict:[String: Any] = dict["user"] as? [String: Any] {
             user = User(dict: userDict)
+        }
+        if let retweeted_statusDict:[String: Any] = dict["retweeted_status"] as? [String: Any] {
+           retweeted_status = Status(dict: retweeted_statusDict)
         }
         
     }

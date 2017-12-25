@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 extension String {
      func translateTime() -> String {
         
@@ -43,3 +43,37 @@ extension String {
     }
    
 }
+
+extension String {
+    func height(font: UIFont, maxWidth: CGFloat) -> CGFloat {
+        let fontAttributes = [NSAttributedStringKey.font: font]
+        
+        let size = (self as NSString).size(withAttributes: fontAttributes)
+        return size.height
+    }
+}
+
+
+//extension String {
+//    func replaceUrl()->(NSAttributedString) {
+//        var str = "主角兔  秋冬款牛反绒兔毛雪地靴  券后59，这个价比双十二更便宜！能增高显瘦\n领券&下单：http://t.cn/RTSWU60"
+//        let pattern = "http(s)?://([\\w-]+\\.)+[\\w-]+(/[\\w- ./?%&=]*)?" as NSString
+//        do {
+//            let regex = try NSRegularExpression(pattern: pattern as String, options: .caseInsensitive)
+//            let result = regex.matches(in: str as String, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSRange(location: 0, length: str.length))
+//            if result.count > 0 {
+//                for i in 0..<result.count {
+//                    let url = result[i]
+//                    print(url.range)
+//
+//                }
+//
+//
+//            }
+//        } catch {
+//
+//        }
+//
+//    }
+//}
+

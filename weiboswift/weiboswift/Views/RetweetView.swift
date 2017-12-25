@@ -9,7 +9,9 @@
 import UIKit
 
 class RetweetView: UIView {
-
-
-
+    var status: Status!{
+        didSet {
+            
+        }
+    }
 }

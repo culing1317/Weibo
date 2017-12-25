@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    var defaultVC: UIViewController = DiskTool.isLogin ? WelcomeVC() : UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateInitialViewController()!
+    var defaultVC: UIViewController = WelcomeVC()//DiskTool.isLogin ? WelcomeVC() : UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateInitialViewController()!
     
 
 

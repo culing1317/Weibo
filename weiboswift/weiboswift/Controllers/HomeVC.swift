@@ -15,19 +15,28 @@ class HomeVC: BaseVC {
         self.titleBtn.isSelected = prsented
     }
     private lazy var popVC = PopoverVC()
-    
+    lazy var photoBrowserAnimator: PhotoBrowserAnimator = PhotoBrowserAnimator()
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.estimatedRowHeight = 200
+        NotificationCenter.default.addObserver(self, selector: #selector(showPhotosBrowser), name: ShowPhotoBrowserNote, object: nil)
         //1.没有登陆时设置的内容
         visitorView.addRotationAnimate()
         if !DiskTool.isLogin {
             return
         }
+        tableView.estimatedRowHeight = 200
         //2.设置导航栏的内容
         setupNavigationBar()
         titleBtn.setTitle(DiskTool.getAccount()?.name, for: .normal)
         requestData()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = false
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        tabBarController?.tabBar.isHidden = true
     }
 
 }
@@ -71,12 +80,33 @@ extension HomeVC {
 
         
     }
+    
+    @objc func showPhotosBrowser(noti: Notification) {
+        let userInfo = noti.userInfo
+        let urls = userInfo![ShowPhotoBrowserUrlsKey] as! Array<String>
+        let index = userInfo![ShowPhotoBrowserIndexKey] as! Int
+        let object = noti.object as! PhotosView
+        var picURLs = [URL]()
+        
+        for urlStr in urls {
+            let url = URL(string: urlStr)
+            picURLs.append(url!)
+        }
+        let photoBrowserVC = PhotoBrowserVC(index: index, urls: picURLs)
+        
+        photoBrowserVC.modalPresentationStyle = .custom
+        photoBrowserVC.transitioningDelegate = photoBrowserAnimator
+        photoBrowserAnimator.presentedDelegate = object
+        
+        present(photoBrowserVC, animated: true, completion: nil)
+        
+    }
 }
 
 extension HomeVC {
     func requestData() {
         let access_token = DiskTool.getAccount()?.access_token!
-        let parameters = ["access_token": access_token, "count": 8] as [String : Any?]
+        let parameters = ["access_token": access_token, "count": 15] as [String : Any?]
         NetworkTool.shareInstance.request(methodType: .GET, urlStr: homeStatuses_url, parameters: parameters) { (result: Any?, error: Error?) in
             if (error != nil) {
                SVProgressHUD.show(withStatus: error?.localizedDescription)
@@ -91,7 +121,6 @@ extension HomeVC {
                 self.statuseArr.append(status)
             }
             self.tableView.reloadData()
-            print(self.statuseArr)
         }
     }
 }
@@ -104,6 +133,15 @@ extension HomeVC {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: StatusCell = tableView.dequeueReusableCell(withIdentifier: "status_cell") as! StatusCell
         cell.status = statuseArr[indexPath.row]
+        cell.textL.linkTapHandler = { (label: HYLabel, link: String, range: NSRange ) in
+            print(link)
+            let webVC = BaseWebViewVC()
+            webVC.urlStr = link
+            self.navigationController?.pushViewController(webVC, animated: true)
+        }
+        cell.textL.userTapHandler = { (label: HYLabel, screenName: String, range: NSRange ) in
+            print(screenName)
+        }
         return cell
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

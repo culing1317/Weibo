@@ -17,4 +17,11 @@ extension UIButton {
         setBackgroundImage(UIImage(named:bghlImageName), for: UIControlState.highlighted)
         sizeToFit()
     }
+    convenience init(bgColor: UIColor, titleColor: UIColor, fontSize: CGFloat, title: String) {
+        self.init()
+        setTitleColor(titleColor, for: .normal)
+        setTitle(title, for: .normal)
+        backgroundColor = bgColor
+        titleLabel?.font = UIFont.systemFont(ofSize: 14)
+    }
 }
